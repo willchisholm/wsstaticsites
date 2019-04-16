@@ -1,0 +1,39 @@
+Arguments: 
+  /usr/local/Cellar/node/11.13.0/bin/node /usr/local/Cellar/yarn/1.15.2/libexec/bin/yarn.js build
+
+PATH: 
+  /Users/willchis/.gem/ruby/2.3.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/willchis/Library/Python/2.7/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS
+
+Yarn version: 
+  1.15.2
+
+Node version: 
+  11.13.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/willchis/Desktop/school/cs52/wsstaticpages/site_2/package.json: Unexpected token } in JSON at position 296
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:304:30)
+      at /usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "scripts": {
+      "start": "NODE_ENV=development webpack-dev-server",
+      "test": "eslint src/**.js",
+      "build": "yarn clean; NODE_ENV=production webpack --colors",
+      "clean": "rimraf dist",
+      "deploy": "yarn build; surge -p dist -d willchisholm-cs52-wsstatic.surge.sh; yarn clean"
+    },
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
